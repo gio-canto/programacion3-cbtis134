@@ -1,8 +1,19 @@
-# =========================================
-# Autor: Gio Antonio Canto Gomez
-# Actividad: Condicionales en Python
-# Descripción: Código unificado y simplificado
-# =========================================
+"""
+=========================================
+Autor: Gio Antonio Canto Gómez
+Actividad: Condicionales en Python
+Descripción: Este programa presenta un menú de opciones con ejercicios de condicionales:
+    - Comparar números
+    - Verificar edad
+    - Calcular hipotenusa
+    - Operaciones básicas
+    - Descuento por puntos
+    - Calcular factura
+    - Verificar contraseña
+    - Determinar año bisiesto
+    - Tarifa especial
+    - Pizza personalizada
+"""
 
 import math
 
