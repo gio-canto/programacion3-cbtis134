@@ -131,9 +131,9 @@ def pizza():
         tipo = "no vegetariana"
     print("Has elegido una pizza", tipo, "con mozzarella, tomate y", ingrediente)
 
-# ============================
+
 # Menú principal
-# ============================
+
 while True:
     print("\n===== MENÚ DE OPCIONES =====")
     print("1. Comparar números")
