@@ -85,3 +85,12 @@ class Raises:
             r1, r2 = self.Obtnerrazies()
             print(f"Dos soluciones reales: x1 = {r1}, x2 = {r2}")
 
+# Ejemplos de uso:
+# ecu = Raises(1, -3, 2)
+# ecu.caluclar()  # Dos soluciones reales: x1 = 2.0, x2 = 1.0
+
+# ecu2 = Raises(1, 2, 1)
+# ecu2.caluclar()  # Una única solución real: x = -1.0
+
+# ecu3 = Raises(1, 0, 1)
+# ecu3.caluclar()  # No existen soluciones reales.
