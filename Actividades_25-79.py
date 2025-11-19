@@ -1,14 +1,22 @@
 # TSMHSPMHMPCVMF2L - Colección de actividades con menú mejorado
 # modelo preliminar
-
+username = ("papu")
 from random import random
+import time 
+import os
 import math
 import re
 
+def limpiar_pantalla():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 def actividad1_funcionpieza():
+    limpiar_pantalla ()
+    print ("==============================")
+    print ("         Calculo de X")
+    print ("==============================")
     try:
-        x = float(input("Ingrese x: "))
+        x = float(input("Ingrese el valor de x: "))
     except ValueError:
         print("Entrada inválida.")
         return
@@ -18,11 +26,29 @@ def actividad1_funcionpieza():
         y = 3 * x - 1
     else:
         y = x**2 - 4 * x + 5
+    
+    limpiar_pantalla ()
     print(f"y = {y}")
+    os.system ("Pause")
+
+    
 
 def actividad2_terrenos():
+    limpiar_pantalla ()
     PRECIOS = {'A': 70, 'B': 60, 'C': 45, 'D': 30}
-    zona = input("Zona (A/B/C/D): ").strip().upper()
+    print ("====================================")
+    print ("    INMOBILARIA HERDIER SA DE CV")
+    print ("====================================")
+    print (f"¡Hola!: {username}")
+    print ("")
+    print ("Estas son las zonas disponibles:")
+    print ("------------------------------------")
+    print (f"ZONA A = ${PRECIOS['A']} m²")
+    print (f"ZONA B = ${PRECIOS['B']} m²")
+    print (f"ZONA C = ${PRECIOS['C']} m²")
+    print (f"ZONA D = ${PRECIOS['D']} m²")
+    print ("------------------------------------")
+    zona = input("Favor de selecionar la deseada: ").strip().upper()
     if zona not in PRECIOS:
         print("Zona inválida.")
         return
@@ -32,19 +58,36 @@ def actividad2_terrenos():
         print("Área inválida.")
         return
     precio = PRECIOS[zona] * area
-    print(f"Precio de venta: ${precio:,.2f}")
+    limpiar_pantalla ()
+    time.sleep(0.50)
+    limpiar_pantalla ()
+    print ("====================================")
+    print ("             Cotización")
+    print ("====================================")
+    print ("Estimado usuario se le informa que")
+    print ("de acuerdo a su eleccion el precio")
+    print (f"de venta del terrero es de : ${precio:,.2f}")
+    print ("Atentamente:")
+    print ("INMOBILARIA HERDIER")
+    print ("Gracias por su tiempo φ(*￣0￣)")
+    os.system ("Pause")
 
 def actividad3_numerosdel1al10conwhile():
+    limpiar_pantalla ()
     i = 1
     while i <= 10:
         print(i)
         i += 1
+    os.system ("Pause")
 
 def actividad4_numerosdel1al10confor():
+    limpiar_pantalla ()
     for i in range(1, 11):
         print(i)
+    os.system ("Pause")
 
 def actividad5_maximohasta99():
+    limpiar_pantalla ()
     maximo = None
     while True:
         try:
@@ -60,8 +103,10 @@ def actividad5_maximohasta99():
         print("No se ingresaron números válidos.")
     else:
         print(f"Mayor: {maximo}")
+    os.system ("Pause")
 
 def actividad6_sumas_productos_impares_20_80():
+    limpiar_pantalla ()
     impares = [n for n in range(21, 80) if n % 2 == 1]
     s = 0
     p = 1
@@ -70,8 +115,10 @@ def actividad6_sumas_productos_impares_20_80():
         p *= n
     print(f"Suma impares (20,80): {s}")
     print(f"Producto impares (20,80): {p}")
+    os.system ("Pause")
 
 def actividad7_conteorangos_naturales():
+    limpiar_pantalla ()
     print("Ingrese números naturales. Finalice con vacío.")
     menores_15 = entre_25_45 = mayores_50 = 0
     while True:
@@ -91,8 +138,10 @@ def actividad7_conteorangos_naturales():
     print(f"Menores de 15: {menores_15}")
     print(f"Entre 25 y 45: {entre_25_45}")
     print(f"Mayores de 50: {mayores_50}")
+    os.system ("Pause")
 
 def actividad8_cadenasoperaciones():
+    limpiar_pantalla ()
     s1 = input("Cadena 1: ")
     s2 = input("Cadena 2: ")
 
@@ -136,8 +185,10 @@ def actividad8_cadenasoperaciones():
         print("Resultado de s2 tras invertir la palabra:", s2_invertida)
     else:
         print("La palabra no se encuentra en s2.")
+    os.system ("Pause")
 
 def actividad9_sumaprimerosN():
+    limpiar_pantalla ()
     try:
         N = int(input("N: "))
         if N < 0:
@@ -146,24 +197,59 @@ def actividad9_sumaprimerosN():
         print(f"Suma 1..N = {suma}")
     except ValueError:
         print("N inválido.")
+    os.system ("Pause")
 
 def actividad10_pulsaciones_por_edad_y_sexo():
-    nombre = input("Nombre: ")
+    limpiar_pantalla ()
+    print ("===========================================")
+    print ("         Simulador de pulsaciones")
+    print ("===========================================")
+    nombre = input("Ingrese el nombre del encuestado: ")
+    if nombre == ":v" :
+        print ("Viva la grase xdddd :v")
     try:
         edad = int(input("Edad: "))
     except ValueError:
         print("Edad inválida.")
         return
-    sexo = input("Sexo (F/M): ").strip().upper()
-    if sexo.startswith('F'):
-        resultado = (220 - edad) / 10.0
-    else:
-        resultado = (210 - edad) / 10.0
-    print(f"{nombre}, pulsaciones cada 10 s: {resultado:.2f}")
+    while True :
+        sexo = input("Sexo (F/M): ").strip().upper()
+        if sexo.startswith('F'):
+            resultado = (220 - edad) / 10.0
+            break
+        elif sexo.startswith('M'): 
+            resultado = (210 - edad) / 10.0
+            break
+        elif sexo == "X" :
+            print ("Esta bien pero.....")
+            time.sleep(1)
+            break
+        elif sexo.startswith("0") :
+            print ("Fracasado bro ༼ つ ◕_◕ ༽つ")
+            time.sleep(1)
+            continue
+        elif sexo.startswith("1") :
+            print ("Todo un semental ༼ つ ◕_◕ ༽つ")
+            time.sleep(1)
+            continue
+        else :
+            resultado = (210 - edad) / 10.0
+    limpiar_pantalla ()
+    time.sleep(0.50)
+    print(f"Estimado : {nombre}, sus pulsaciones cada 10 s son de : {resultado:.2f}")
+    print(f"Espero que te sirva :D")
+    os.system ("Pause")
 
 def actividad12_reforestacion():
+    limpiar_pantalla ()
+    print ("===================================================")
+    print ("                 Fundacion Gea A.C                 ")
+    print ("===================================================")
+    print ("herramienta de de calculo de costo de reforestacion")
+    print ("Copyright ©1993 Gea A.C")
+    time.sleep(0.50)
     try:
-        hectareas = float(input("Superficie en hectáreas: "))
+        hectareas = float(input("Ingrese la superficie en hectáreas: "))
     except ValueError:
         print("Dato inválido.")
         return
@@ -180,12 +266,25 @@ def actividad12_reforestacion():
     n_pinos = int((sup_pino/10)*8)
     n_oyameles = int((sup_oyamel/15)*15)
     n_cedros = int((sup_cedro/18)*10)
-
+    limpiar_pantalla ()
+    time.sleep(0.50)
+    print ("===================================================")
+    print ("|                Operacion Gea                    |")
+    print ("===================================================")
+    print ("Ante los resultados se podra reforestar:")
+    print ("-----------------------")
     print(f"Pinos: {n_pinos}")
     print(f"Oyameles: {n_oyameles}")
     print(f"Cedros: {n_cedros}")
+    print ("-----------------------")
+    print ("Por un mundo mas limpio siempre gea")
+    print (f"Estimado {username} gracias por usarme.")
+    os.system ("Pause")
 
 def actividad13_imeca_sancion():
+    print ("===================================================")
+    print ("                 Fundacion Gea A.C                 ")
+    print ("===================================================")
     lecturas = []
     for i in range(1, 6):
         while True:
@@ -593,122 +692,126 @@ def actividad36_ordenadas_pares_funcion():
         print(f"{x}\t{f(x)}")
 
 def main():
-  while True:
-    print("\n===== MENÚ DE OPCIONES =====")
-    print("1. Función a trozos")
-    print("2. Precio de terrenos")
-    print("3. Números del 1 al 10 (while)")
-    print("4. Números del 1 al 10 (for)")
-    print("5. Máximo hasta -99")
-    print("6. Suma y producto impares (20,80)")
-    print("7. Conteo por rangos (naturales)")
-    print("8. Operaciones con cadenas")
-    print("9. Suma 1..N")
-    print("10. Pulsaciones (edad/sexo)")
-    print("11. Reforestación")
-    print("12. IMECA y sanción")
-    print("13. Altura de pelota (tabla)")
-    print("14. Banco (balances)")
-    print("15. Promedios (<=45 años)")
-    print("16. Empleados y sueldos")
-    print("17. Factura de productos")
-    print("18. Circunferencia (L y A)")
-    print("19. km/h → m/s")
-    print("20. Hipotenusa")
-    print("21. Área de triángulo (lados)")
-    print("22. Número de la suerte")
-    print("23. Producto o suma (según a)")
-    print("24. Leer entero validado")
-    print("25. Estadística N números")
-    print("26. Precio zapatos por talla")
-    print("27. Interés mensual por capital")
-    print("28. ¿Todos los dígitos pares?")
-    print("29. Reparto de herencia")
-    print("30. Descuento por importe")
-    print("31. Pago trabajador (bonif/desc)")
-    print("32. Estímulo académico")
-    print("33. Tipo de carácter")
-    print("34. Contar 20 números")
-    print("35. Pares (0..30) y f(x)=x^3+1")
-    print("0. Salir")
+    limpiar_pantalla ()
+    time.sleep(0.50)   
+    username = input ("Ingrese su nombre: ")
+    while True:
+        limpiar_pantalla ()
+        print("\n===== MENÚ DE OPCIONES =====")
+        print("1. Función a trozos")
+        print("2. Precio de terrenos")
+        print("3. Números del 1 al 10 (while)")
+        print("4. Números del 1 al 10 (for)")
+        print("5. Máximo hasta -99")
+        print("6. Suma y producto impares (20,80)")
+        print("7. Conteo por rangos (naturales)")
+        print("8. Operaciones con cadenas")
+        print("9. Suma 1..N")
+        print("10. Pulsaciones (edad/sexo)")
+        print("11. Reforestación")
+        print("12. IMECA y sanción")
+        print("13. Altura de pelota (tabla)")
+        print("14. Banco (balances)")
+        print("15. Promedios (<=45 años)")
+        print("16. Empleados y sueldos")
+        print("17. Factura de productos")
+        print("18. Circunferencia (L y A)")
+        print("19. km/h → m/s")
+        print("20. Hipotenusa")
+        print("21. Área de triángulo (lados)")
+        print("22. Número de la suerte")
+        print("23. Producto o suma (según a)")
+        print("24. Leer entero validado")
+        print("25. Estadística N números")
+        print("26. Precio zapatos por talla")
+        print("27. Interés mensual por capital")
+        print("28. ¿Todos los dígitos pares?")
+        print("29. Reparto de herencia")
+        print("30. Descuento por importe")
+        print("31. Pago trabajador (bonif/desc)")
+        print("32. Estímulo académico")
+        print("33. Tipo de carácter")
+        print("34. Contar 20 números")
+        print("35. Pares (0..30) y f(x)=x^3+1")
+        print("0. Salir")
 
-    opcion = input("Elige una opción: ")
+        opcion = input("Elige una opción: ")
 
-    if opcion == "1":
-        actividad1_funcionpieza()
-    elif opcion == "2":
-        actividad2_terrenos()
-    elif opcion == "3":
-        actividad3_numerosdel1al10conwhile()
-    elif opcion == "4":
-        actividad4_numerosdel1al10confor()
-    elif opcion == "5":
-        actividad5_maximohasta99()
-    elif opcion == "6":
-        actividad6_sumas_productos_impares_20_80()
-    elif opcion == "7":
-        actividad7_conteorangos_naturales()
-    elif opcion == "8":
-        actividad8_cadenasoperaciones()
-    elif opcion == "9":
-        actividad9_sumaprimerosN()
-    elif opcion == "10":
-        actividad10_pulsaciones_por_edad_y_sexo()
-    elif opcion == "11":
-        actividad12_reforestacion()
-    elif opcion == "12":
-        actividad13_imeca_sancion()
-    elif opcion == "13":
-        actividad14_alturapelota_tabla()
-    elif opcion == "14":
-        actividad15_banco_balances()
-    elif opcion == "15":
-        actividad16_personas_promedios()
-    elif opcion == "16":
-        actividad17_empleados_sueldos()
-    elif opcion == "17":
-        actividad18_factura_productos()
-    elif opcion == "18":
-        actividad19_circunferencia()
-    elif opcion == "19":
-        actividad20_kmh_a_ms()
-    elif opcion == "20":
-        actividad21_hipotenusa()
-    elif opcion == "21":
-        actividad22_area_triangulo_lados()
-    elif opcion == "22":
-        actividad23_numero_suerte()
-    elif opcion == "23":
-        actividad24_numero_producto_o_suma()
-    elif opcion == "24":
-        actividad25_leerint()
-    elif opcion == "25":
-        actividad26_estadistica_N_numeros()
-    elif opcion == "26":
-        actividad27_precio_zapatos_tallas()
-    elif opcion == "27":
-        actividad28_interes_mensual_capital()
-    elif opcion == "28":
-        actividad29_digitos_pares()
-    elif opcion == "29":
-        actividad30_reparto_de_herencia()
-    elif opcion == "30":
-        actividad31_descuento_por_importe()
-    elif opcion == "31":
-        actividad32_pago_trabajador_bonif_desc()
-    elif opcion == "32":
-        actividad33_estimulo_academico_unidades()
-    elif opcion == "33":
-        actividad34_tipo_caracter()
-    elif opcion == "34":
-        actividad35_contar_20_numeros()
-    elif opcion == "35":
-        actividad36_ordenadas_pares_funcion()
-    elif opcion == "0":
-        print("Saliendo del programa...")
-        break
-    else:
-        print("Opción no válida, intenta de nuevo.")
+        if opcion == "1":
+            actividad1_funcionpieza()
+        elif opcion == "2":
+            actividad2_terrenos()
+        elif opcion == "3":
+            actividad3_numerosdel1al10conwhile()
+        elif opcion == "4":
+            actividad4_numerosdel1al10confor()
+        elif opcion == "5":
+            actividad5_maximohasta99()
+        elif opcion == "6":
+            actividad6_sumas_productos_impares_20_80()
+        elif opcion == "7":
+            actividad7_conteorangos_naturales()
+        elif opcion == "8":
+            actividad8_cadenasoperaciones()
+        elif opcion == "9":
+            actividad9_sumaprimerosN()
+        elif opcion == "10":
+            actividad10_pulsaciones_por_edad_y_sexo()
+        elif opcion == "11":
+            actividad12_reforestacion()
+        elif opcion == "12":
+            actividad13_imeca_sancion()
+        elif opcion == "13":
+            actividad14_alturapelota_tabla()
+        elif opcion == "14":
+            actividad15_banco_balances()
+        elif opcion == "15":
+            actividad16_personas_promedios()
+        elif opcion == "16":
+            actividad17_empleados_sueldos()
+        elif opcion == "17":
+            actividad18_factura_productos()
+        elif opcion == "18":
+            actividad19_circunferencia()
+        elif opcion == "19":
+            actividad20_kmh_a_ms()
+        elif opcion == "20":
+            actividad21_hipotenusa()
+        elif opcion == "21":
+            actividad22_area_triangulo_lados()
+        elif opcion == "22":
+            actividad23_numero_suerte()
+        elif opcion == "23":
+            actividad24_numero_producto_o_suma()
+        elif opcion == "24":
+            actividad25_leerint()
+        elif opcion == "25":
+            actividad26_estadistica_N_numeros()
+        elif opcion == "26":
+            actividad27_precio_zapatos_tallas()
+        elif opcion == "27":
+            actividad28_interes_mensual_capital()
+        elif opcion == "28":
+            actividad29_digitos_pares()
+        elif opcion == "29":
+            actividad30_reparto_de_herencia()
+        elif opcion == "30":
+            actividad31_descuento_por_importe()
+        elif opcion == "31":
+            actividad32_pago_trabajador_bonif_desc()
+        elif opcion == "32":
+            actividad33_estimulo_academico_unidades()
+        elif opcion == "33":
+            actividad34_tipo_caracter()
+        elif opcion == "34":
+            actividad35_contar_20_numeros()
+        elif opcion == "35":
+            actividad36_ordenadas_pares_funcion()
+        elif opcion == "0":
+            print("Saliendo del programa...")
+            break
+        else:
+            print("Opción no válida, intenta de nuevo.")
 
 if __name__ == "__main__":
     main()
