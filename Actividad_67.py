@@ -9,7 +9,7 @@ def main():
     etiqueta1.pack(pady=20)
 
     # Segunda etiqueta fija al final
-    etiqueta2 = tk.Label(window, text="¡⁶🤷⁷", font=("Arial", 11))
+    etiqueta2 = tk.Label(window, text="¡⁶🤷⁷!", font=("Arial", 11))
     etiqueta2.pack(side="bottom", pady=10)
 
     def handle_click(event):
